@@ -34,3 +34,12 @@ appointment1 = Appointment.new({
   'pet_id' => 2
   })
 appointment1.save()
+
+appointment2 = Appointment.new({
+  'appt_date' => '01/04/19',
+  'appt_time' => '10:00',
+  'service' => 'groom',
+  'length_in_mins' => 120,
+  'pet_id' => 1
+  })
+appointment2.save()

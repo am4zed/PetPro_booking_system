@@ -1,0 +1,36 @@
+<h1>Register new pet</h1>
+
+<form action="/petpro/pets" method="post">
+  <label for="name">Name: </label>
+  <input type="text" name="name">
+  <label for="owner-name">Owner Name: </label>
+  <input type="text" name="owner-name">
+  <label for="type">Pet Type: </label>
+  <select name="type">
+    <option value="dog">dog</option>
+    <option value="cat">cat</option>
+    <option value="rodent">rodent</option>
+    <option value="exotic">exotic</option>
+    <option value="other">other</option>
+  </select>
+  <label for="breed">Breed: </label>
+  <input type="text" name="breed">
+  <label for="gender">Gender: </label>
+  <select name="gender">
+    <option value="male">male</option>
+    <option value="female">female</option>
+  </select>
+  <label for="age">Age: </label>
+  <input type="number" name="age">
+  <label for="neutered_or_spayed">Neutered/spayed</label>
+  <select name="neutered_or_spayed">
+    <option value="true">true</option>
+    <option value="false">false</option>
+  </select>
+  <label for="photo">Photo: </label>
+  <input type="text" name="photo">
+  <input class="btn btn--action" type='submit' value="Save details">
+
+
+
+</form>

@@ -1,0 +1,9 @@
+<h2>All Pets</h2>
+
+<%for pet in @pets%>
+<div class="pet">
+    <h3><a href="/petpro/<%= pet.id %>"><%= pet.name %></a></h3>
+    <p>Owner: <%= pet.owner_name %></p>
+    <p>Type: <%= pet.type.capitalize %></p>
+</div>
+<%end%>
