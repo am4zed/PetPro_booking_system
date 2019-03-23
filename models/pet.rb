@@ -13,9 +13,9 @@ class Pet
     @photo = options['photo']
   end
 
-  def save
+  def save()
     sql = 'INSERT INTO pets (name, owner_name, type, breed, gender, age, neutered_or_spayed, photo)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)'
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *'
     values = [@name, @owner_name, @type, @breed, @gender, @age, @neutered_or_spayed, @photo]
     results = SqlRunner.run(sql,values)
     @id = results.first['id'].to_i
