@@ -3,7 +3,7 @@ class SqlRunner
 
   def self.run( sql, values = [] )
     begin
-      db = PG.connect({ dbname: 'pet_services', host: 'localhost' })
+      db = PG.connect({ dbname: 'pet_pro', host: 'localhost' })
       db.prepare("query", sql)
       result = db.exec_prepared( "query", values )
     ensure

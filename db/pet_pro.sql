@@ -6,10 +6,10 @@ CREATE TABLE pets (
   name VARCHAR(255),
   owner_name VARCHAR(255),
   type VARCHAR(255),
+  breed VARCHAR(255),
   gender VARCHAR(255),
   age INT8,
   neutered_or_spayed BOOLEAN,
-  breed VARCHAR(255),
   photo VARCHAR(255)
 );
 
