@@ -14,14 +14,12 @@
 
 <div class="form-el">
   <label for="type">Pet Type: </label>
-  <select name="type" selected="<%= @pet.type %>">
-    <% for pet in @pets %>
-      <% if pet.type == @pet.type %>
-        <option value=<%= pet.type %> selected><%= pet.type.capitalize %></option>
-      <% else %>
-        <option value=<%= pet.type %>><%= pet.type.capitalize %></option>
-      <% end %>
-    <% end %>
+  <select name="type">
+    <option value="Dog">Dog</option>
+    <option value="Cat">Cat</option>
+    <option value="Rodent">Rodent</option>
+    <option value="Exotic">Exotic</option>
+    <option value="Other">OSther</option>
   </select>
 </div>
 
@@ -32,14 +30,9 @@
 
 <div class="form-el">
   <label for="gender">Gender: </label>
-  <select name="gender" selected="<%= @pet.gender %>">
-  <% for pet in @pets %>
-    <% if pet.gender == @pet.gender %>
-      <option value=<%= pet.gender %> selected><%= pet.gender.capitalize %></option>
-    <% else %>
-      <option value=<%= pet.gender %>><%= pet.gender.capitalize %></option>
-    <% end %>
-  <% end %>
+  <select name="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
   </select>
 </div>
 
@@ -50,16 +43,9 @@
 
 <div class="form-el">
   <label for="neutered_or_spayed">Neutered/spayed</label>
-  <select name="neutered_or_spayed" selected=<%= @pet.neutered_or_spayed %>>
-    <% for pet in @pets %>
-      <% if pet.neutered_or_spayed == @pet.neutered_or_spayed %>
-        <option value=<%= pet.neutered_or_spayed %> selected><%= pet.neutered_or_spayed.capitalize %></option>
-      <% else %>
-        <option value=<%= pet.neutered_or_spayed %>><%= pet.neutered_or_spayed.capitalize %></option>
-      <% end %>
-    <% end %>
-    <option value="true">Yes</option>
-    <option value="false">No</option>
+  <select name="neutered_or_spayed"%>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
   </select>
 </div>
 
