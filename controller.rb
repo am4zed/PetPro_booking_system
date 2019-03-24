@@ -28,6 +28,10 @@ get '/petpro/appointments' do
   erb (:appointments_index)
 end
 
+get '/petpro/appointments/new' do
+  erb (:new_appointment)
+end
+
 get '/petpro/appointments/:id' do
   @appointment = Appointment.find(params['id'].to_i)
   erb (:show_appointment)
@@ -39,9 +43,7 @@ post '/petpro/pets' do
   redirect to '/petpro/pets'
 end
 
-get '/petpro/appointments/new' do
-  erb (:new_appointment)
-end
+
 
 post '/petpro/appointments' do
   appointment = Appointment.new(params)
