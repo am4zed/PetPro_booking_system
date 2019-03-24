@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Pet
   attr_reader :id, :name, :owner_name, :type,
   :breed, :gender, :age, :neutered_or_spayed, :photo
-  
+
   def initialize(options)
     @id = options['id'] if options['id']
     @name = options['name']
@@ -28,6 +28,14 @@ class Pet
     sql = 'SELECT * FROM pets'
     results = SqlRunner.run(sql)
     results.map { |pet| Pet.new(pet)  }
+  end
+
+  def self.find(id)
+    sql = 'SELECT * FROM pets
+    WHERE id = $1'
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Pet.new(results.first)
   end
 
 

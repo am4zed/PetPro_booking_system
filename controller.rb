@@ -11,16 +11,26 @@ end
 
 get '/petpro/pets' do
   @pets = Pet.all()
-  erb (:pets)
-end
-
-get '/petpro/appointments' do
-  # @appointments = Appointment.all()
-  erb (:appointments)
+  erb (:pets_index)
 end
 
 get '/petpro/pets/new' do
   erb (:new_pet)
+end
+
+get '/petpro/pets/:id' do
+  @pet = Pet.find(params['id'].to_i)
+  erb (:show_pet)
+end
+
+get '/petpro/appointments' do
+  @appointments = Appointment.all()
+  erb (:appointments_index)
+end
+
+get '/petpro/appointments/:id' do
+  @appointment = Appointment.find(params['id'].to_i)
+  erb (:show_appointment)
 end
 
 post '/petpro/pets' do

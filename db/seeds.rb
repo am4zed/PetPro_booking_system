@@ -9,8 +9,8 @@ pet1 = Pet.new({
   'breed' => 'Jackadoodle',
   'gender' => 'male',
   'age' => 3,
-  'neutered_or_spayed' => true,
-  'photo' => 'ozzy_pic'
+  'neutered_or_spayed' => 'Yes',
+  'photo' => 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjb4ej78JrhAhVqyoUKHXcyB00QjRx6BAgBEAU&url=https%3A%2F%2Fwww.101dogbreeds.com%2Fjack-a-poo.asp&psig=AOvVaw3WC_CC0VWFLO7vqvffI5OT&ust=1553520491048344'
   })
 pet1.save()
 
@@ -21,7 +21,7 @@ pet2 = Pet.new({
   'breed' => 'Border-Lakeland Terrier',
   'gender' => 'male',
   'age' => 3,
-  'neutered_or_spayed' => true,
+  'neutered_or_spayed' => 'Yes',
   'photo' => 'baxter_pic'
   })
 pet2.save()

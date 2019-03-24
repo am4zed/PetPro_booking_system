@@ -1,0 +1,12 @@
+<h2><a href="/petpro/pets/new">Register new pet</a></h2>
+
+<h2>All Pets</h2>
+
+<%for pet in @pets%>
+<div class="pet">
+    <h3><%= pet.name.capitalize %></h3>
+    <p>Owner: <%= pet.owner_name %></p>
+    <p>Type: <%= pet.type.capitalize %></p>
+    <p><a href="/petpro/pets/<%= pet.id %>">More Details</a><p>
+</div>
+<%end%>

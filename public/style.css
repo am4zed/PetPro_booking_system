@@ -1,4 +1,4 @@
-body {
+html {
   background-color: #41C39B;
 }
 
@@ -16,4 +16,8 @@ a {
 
 nav {
   display: flex;
+}
+
+form {
+
 }

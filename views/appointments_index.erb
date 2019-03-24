@@ -1,0 +1,10 @@
+<h2>All Appointments</h2>
+<%for appointment in @appointments%>
+<div class="appointment">
+    <p>Pet: <%= Pet.find(appointment.pet_id).name %></p>
+    <p>Service: <%= appointment.service %></p>
+    <p>Date: <%= appointment.appt_date %></p>
+    <p>Time: <%= appointment.appt_time %></p>
+    <p><a href="/petpro/appointments/<%= appointment.id %>">More Details</a><p>
+</div>
+<%end%>

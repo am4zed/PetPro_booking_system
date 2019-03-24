@@ -1,0 +1,7 @@
+<div class="appointment details">
+    <p>Pet: <%= Pet.find(@appointment.pet_id).name %></p>
+    <p>Service: <%= @appointment.service %></p>
+    <p>Date: <%= @appointment.appt_date %></p>
+    <p>Time: <%= @appointment.appt_time %></p>
+    <p>Appointment length: <%= @appointment.length_in_mins %> mins</p>
+</div>

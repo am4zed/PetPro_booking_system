@@ -9,7 +9,7 @@ CREATE TABLE pets (
   breed VARCHAR(255),
   gender VARCHAR(255),
   age INT8,
-  neutered_or_spayed BOOLEAN,
+  neutered_or_spayed VARCHAR(255),
   photo VARCHAR(255)
 );
 
