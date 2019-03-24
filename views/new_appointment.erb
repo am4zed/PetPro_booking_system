@@ -1,22 +1,42 @@
 <h1>Book New Appointment</h1>
+
 <form action="/petpro/appointments" method="post">
+
+<div class="form-el">
   <label for="pet_id">Pet: </label>
   <select name="pet">
       <% for pet in @pets %>
       <option value="<%= pet.id%>"><%= pet.name %></option>
       <% end %>
   </select>
+</div>
+
+<div class="form-el">
   <label for="service">Service: </label>
   <select name="service">
     <option value="walk">Walk</option>
     <option value="groom">Groom</option>
     <option value="visit">Visit</option>
   </select>
+</div>
+
+<div class="form-el">
   <label for="appt_date">Date: </label>
   <input type="date" name="date">
+</div>
+
+<div class="form-el">
   <label for="appt_time">Time: </label>
   <input type="time" name="time">
+</div>
+
+<div class="form-el">
   <label for="length_in_mins">Appointment length(mins):</label>
   <input type="number" name="length_in_mins">
+</div>
+
+<div class="form-el">
   <input type='submit' value="Book appointment">
+</div>
+
 </form>

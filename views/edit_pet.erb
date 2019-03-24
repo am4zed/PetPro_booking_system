@@ -1,6 +1,6 @@
 <h1>Edit <%=@pet.name%></h1>
 
-<form action="/petpro/pets/<%= @pet.id %>" method="post">
+<form action="/petpro/pets/<%=@pet.id %>" method="post">
 
 <div class="form-el">
   <label for="name">Name: </label>
@@ -27,7 +27,7 @@
 
 <div class="form-el">
   <label for="breed">Breed: </label>
-  <input type="text" name="breed" value=<%=pet.breed%>>
+  <input type="text" name="breed" value=<%=@pet.breed%>>
 </div>
 
 <div class="form-el">
@@ -45,12 +45,19 @@
 
 <div class="form-el">
   <label for="age">Age: </label>
-  <input type="number" name="age">
+  <input type="number" name="age" value=<%= @pet.age %>>
 </div>
 
 <div class="form-el">
   <label for="neutered_or_spayed">Neutered/spayed</label>
-  <select name="neutered_or_spayed">
+  <select name="neutered_or_spayed" selected=<%= @pet.neutered_or_spayed %>>
+    <% for pet in @pets %>
+      <% if pet.neutered_or_spayed == @pet.neutered_or_spayed %>
+        <option value=<%= pet.neutered_or_spayed %> selected><%= pet.neutered_or_spayed.capitalize %></option>
+      <% else %>
+        <option value=<%= pet.neutered_or_spayed %>><%= pet.neutered_or_spayed.capitalize %></option>
+      <% end %>
+    <% end %>
     <option value="true">Yes</option>
     <option value="false">No</option>
   </select>
@@ -58,7 +65,7 @@
 
 <div class="form-el">
   <label for="photo">Photo: </label>
-  <input type="text" name="photo">
+  <input type="text" name="photo" value=<%=@pet.photo%>>
 </div>
 
 <div class="form-el">

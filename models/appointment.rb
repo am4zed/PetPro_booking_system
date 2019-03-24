@@ -3,6 +3,7 @@ require_relative('../db/sql_runner')
 class Appointment
   attr_reader :id, :appt_date, :appt_time, :service,
   :length_in_mins, :pet_id
+
   def initialize(options)
     @id = options['id'] if options['id']
     @pet_id = options['pet_id']
@@ -32,6 +33,20 @@ class Appointment
     values = [id]
     results = SqlRunner.run(sql, values)
     return Appointment.new(results.first)
+  end
+
+  def update()
+    sql = 'UPDATE appointments SET (pet_id, service, appt_date, appt_time, length_in_mins) =
+    ($1, $2, $3, $4, $5) WHERE id = $6'
+    values = [@pet_id, @service, @appt_date, @appt_time, @length_in_mins, @id]
+    SqlRunner.run(sql,values)
+  end
+
+  def delete()
+    sql = 'DELETE FROM appointments
+    WHERE id = $1'
+    values = [@id]
+    SqlRunner.run(sql,values)
   end
 
 end
