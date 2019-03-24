@@ -25,6 +25,7 @@ get '/petpro/pets/:id' do
 end
 
 get '/petpro/pets/:id/edit' do
+  @pets = Pet.all()
   @pet = Pet.find(params['id'].to_i)
   erb(:edit_pet)
 end
@@ -47,6 +48,18 @@ end
 post '/petpro/pets' do
   pet = Pet.new(params)
   pet.save
+  redirect to '/petpro/pets'
+end
+
+post '/petpro/pets/:id' do
+  pet = Pet.new(params)
+  pet.update
+  redirect to "/petpro/pets/#{params['id']}"
+end
+
+post '/petpro/pets/:id/delete' do
+  pet = Pet.find(params['id'])
+  pet.delete
   redirect to '/petpro/pets'
 end
 

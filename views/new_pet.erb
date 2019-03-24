@@ -1,10 +1,18 @@
 <h1>Register new pet</h1>
 
-<form action="/petpro/pets" method="post">
+<form action="/petpro/pets/" method="post">
+
+<div class="form-el">
   <label for="name">Name: </label>
   <input type="text" name="name">
+</div>
+
+<div class="form-el">
   <label for="owner-name">Owner Name: </label>
   <input type="text" name="owner_name">
+</div>
+
+<div class="form-el">
   <label for="type">Pet Type: </label>
   <select name="type">
     <option value="Dog">dog</option>
@@ -13,21 +21,41 @@
     <option value="Exotic">exotic</option>
     <option value="Other">other</option>
   </select>
+</div>
+
+<div class="form-el">
   <label for="breed">Breed: </label>
   <input type="text" name="breed">
+</div>
+
+<div class="form-el">
   <label for="gender">Gender: </label>
   <select name="gender">
     <option value="male">male</option>
     <option value="female">female</option>
   </select>
+</div>
+
+<div class="form-el">
   <label for="age">Age: </label>
   <input type="number" name="age">
+</div>
+
+<div class="form-el">
   <label for="neutered_or_spayed">Neutered/spayed</label>
   <select name="neutered_or_spayed">
     <option value="true">Yes</option>
     <option value="false">No</option>
   </select>
+</div>
+
+<div class="form-el">
   <label for="photo">Photo: </label>
   <input type="text" name="photo">
-  <input type='submit' value="Save details">
+</div>
+
+<div class="form-el">
+  <input type='submit' value="Register pet">
+</div>
+
 </form>

@@ -1,33 +1,68 @@
-<h1>Edit pet details</h1>
+<h1>Edit <%=@pet.name%></h1>
 
-<form action="/petpro/pets" method="post">
+<form action="/petpro/pets/<%= @pet.id %>" method="post">
+
+<div class="form-el">
   <label for="name">Name: </label>
-  <input type="text" name="name">
+  <input type="text" name="name" value="<%=@pet.name %>">
+</div>
+
+<div class="form-el">
   <label for="owner-name">Owner Name: </label>
-  <input type="text" name="owner_name">
+  <input type="text" name="owner_name" value = "<%= @pet.owner_name %>">
+</div>
+
+<div class="form-el">
   <label for="type">Pet Type: </label>
-  <select name="type">
-    <option value="Dog">dog</option>
-    <option value="Cat">cat</option>
-    <option value="Rodent">rodent</option>
-    <option value="Exotic">exotic</option>
-    <option value="Other">other</option>
+  <select name="type" selected="<%= @pet.type %>">
+    <% for pet in @pets %>
+      <% if pet.type == @pet.type %>
+        <option value=<%= pet.type %> selected><%= pet.type.capitalize %></option>
+      <% else %>
+        <option value=<%= pet.type %>><%= pet.type.capitalize %></option>
+      <% end %>
+    <% end %>
   </select>
+</div>
+
+<div class="form-el">
   <label for="breed">Breed: </label>
-  <input type="text" name="breed">
+  <input type="text" name="breed" value=<%=pet.breed%>>
+</div>
+
+<div class="form-el">
   <label for="gender">Gender: </label>
-  <select name="gender">
-    <option value="male">male</option>
-    <option value="female">female</option>
+  <select name="gender" selected="<%= @pet.gender %>">
+  <% for pet in @pets %>
+    <% if pet.gender == @pet.gender %>
+      <option value=<%= pet.gender %> selected><%= pet.gender.capitalize %></option>
+    <% else %>
+      <option value=<%= pet.gender %>><%= pet.gender.capitalize %></option>
+    <% end %>
+  <% end %>
   </select>
+</div>
+
+<div class="form-el">
   <label for="age">Age: </label>
   <input type="number" name="age">
+</div>
+
+<div class="form-el">
   <label for="neutered_or_spayed">Neutered/spayed</label>
   <select name="neutered_or_spayed">
     <option value="true">Yes</option>
     <option value="false">No</option>
   </select>
+</div>
+
+<div class="form-el">
   <label for="photo">Photo: </label>
   <input type="text" name="photo">
+</div>
+
+<div class="form-el">
   <input type='submit' value="Save changes">
+</div>
+
 </form>
