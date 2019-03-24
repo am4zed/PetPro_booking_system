@@ -4,10 +4,12 @@
 
 <div class="pet_info">
   <h2><%=@pet.name%></h2>
-    <p>Owner: <%= @pet.owner_name.capitalize %></p>
+    <p>Owner: <%= @pet.owner_name %></p>
     <p>Type: <%= @pet.type.capitalize %></p>
     <p>Breed: <%= @pet.breed %></p>
     <p>Gender: <%= @pet.gender %></p>
     <p>Age: <%= @pet.age %></p>
     <p>Neutered/spayed: <%= @pet.neutered_or_spayed%></p>
 </div>
+
+<a href="/petpro/pets/:id/edit">Edit</a>

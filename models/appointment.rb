@@ -5,17 +5,17 @@ class Appointment
   :length_in_mins, :pet_id
   def initialize(options)
     @id = options['id'] if options['id']
+    @pet_id = options['pet_id']
+    @service = options['service']
     @appt_date = options['appt_date']
     @appt_time = options['appt_time']
-    @service = options['service']
     @length_in_mins = options['length_in_mins']
-    @pet_id = options['pet_id']
   end
 
   def save
-    sql = 'INSERT INTO appointments (appt_date, appt_time, service, length_in_mins, pet_id)
+    sql = 'INSERT INTO appointments (pet_id, service, appt_date, appt_time, length_in_mins)
     VALUES ($1, $2, $3, $4, $5) RETURNING *'
-    values = [@appt_date, @appt_time, @service, @length_in_mins, @pet_id]
+    values = [@pet_id, @service, @appt_date, @appt_time, @length_in_mins]
     results = SqlRunner.run(sql,values)
     @id = results.first['id'].to_i
   end

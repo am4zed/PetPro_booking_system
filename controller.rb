@@ -18,9 +18,15 @@ get '/petpro/pets/new' do
   erb (:new_pet)
 end
 
+
 get '/petpro/pets/:id' do
   @pet = Pet.find(params['id'].to_i)
   erb (:show_pet)
+end
+
+get '/petpro/pets/:id/edit' do
+  @pet = Pet.find(params['id'].to_i)
+  erb(:edit_pet)
 end
 
 get '/petpro/appointments' do
@@ -29,6 +35,7 @@ get '/petpro/appointments' do
 end
 
 get '/petpro/appointments/new' do
+  @pets = Pet.all()
   erb (:new_appointment)
 end
 
@@ -42,8 +49,6 @@ post '/petpro/pets' do
   pet.save
   redirect to '/petpro/pets'
 end
-
-
 
 post '/petpro/appointments' do
   appointment = Appointment.new(params)

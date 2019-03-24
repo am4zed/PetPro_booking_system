@@ -1,1 +1,22 @@
-<h1>Make New Appointment</h1>
+<h1>Book New Appointment</h1>
+<form action="/petpro/appointments" method="post">
+  <label for="pet_id">Pet: </label>
+  <select name="pet">
+      <% for pet in @pets %>
+      <option value="<%= pet.id%>"><%= pet.name %></option>
+      <% end %>
+  </select>
+  <label for="service">Service: </label>
+  <select name="service">
+    <option value="walk">Walk</option>
+    <option value="groom">Groom</option>
+    <option value="visit">Visit</option>
+  </select>
+  <label for="appt_date">Date: </label>
+  <input type="date" name="date">
+  <label for="appt_time">Time: </label>
+  <input type="time" name="time">
+  <label for="length_in_mins">Appointment length(mins):</label>
+  <input type="number" name="length_in_mins">
+  <input type='submit' value="Book appointment">
+</form>

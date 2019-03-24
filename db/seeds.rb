@@ -27,19 +27,19 @@ pet2 = Pet.new({
 pet2.save()
 
 appointment1 = Appointment.new({
+  'pet_id' => 2,
+  'service' => 'walk',
   'appt_date' => '01/04/19',
   'appt_time' => '09:00',
-  'service' => 'walk',
   'length_in_mins' => 60,
-  'pet_id' => 2
   })
 appointment1.save()
 
 appointment2 = Appointment.new({
+  'pet_id' => 1,
+  'service' => 'groom',
   'appt_date' => '01/04/19',
   'appt_time' => '10:00',
-  'service' => 'groom',
   'length_in_mins' => 120,
-  'pet_id' => 1
   })
 appointment2.save()
