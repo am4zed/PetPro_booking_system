@@ -5,7 +5,15 @@
       <p>Service: <%=appointment.service%></p>
       <p>Date: <%=appointment.appt_date%></p>
       <p>Time: <%=appointment.appt_time%></p>
-      <p>Length(mins): <%=appointment.length_in_mins%></p>
+      <p>Appointment length:
+        <% if @appointment.service.downcase == 'walk' %>
+        <%= 60 %>
+        <% elsif @appointment.service.downcase == 'groom' %>
+        <%= 120 %>
+        <% else%>
+        <%= 30 %>
+        <% end %>
+        mins</p>
     </div>
     <br>
   <%end%>

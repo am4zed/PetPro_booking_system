@@ -35,12 +35,15 @@
 
 <div class="form-el">
   <label for="appt_time">Time: </label>
-  <input type="time" name="appt_time" value = "<%= @appointment.appt_time %>">
-</div>
-
-<div class="form-el">
-  <label for="length_in_mins">Appointment length(mins):</label>
-  <input type="number" name="length_in_mins" value = "<%= @appointment.length_in_mins %>">
+  <select name="appt_time">
+    <%for time in @times%>
+      <%if @appointment.appt_time == time%>
+      <option value="<%=time%>" selected="selected"><%=time%></option>
+      <%else%>
+      <option value="<%=time%>"><%=time%></option>
+      <%end%>
+    <%end%>
+  </select>
 </div>
 
 <div class="form-el">

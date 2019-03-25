@@ -25,6 +25,7 @@ get '/petpro/appointments/:id/edit' do #UPDATE
   @appointment = Appointment.find(params['id'].to_i)
   @pets = Pet.all()
   @services = ['Walk', 'Groom', 'Visit']
+  @times = ['09:00', '12:00', '15:00']
   erb(:"appointments/edit")
 end
 
