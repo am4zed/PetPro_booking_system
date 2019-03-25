@@ -9,6 +9,10 @@ h1 {
   justify-content: center;
 }
 
+h2 {
+  color: #FFFFFF;
+}
+
 a {
   color: #FFFFFF;
   text-decoration: none;

@@ -12,5 +12,12 @@
     <p>Neutered/spayed: <%= @pet.neutered_or_spayed%></p>
 </div>
 
+<div>
 <a href="/petpro/pets/<%= @pet.id %>/edit">Edit</a>
+</div>
+
+<div>
+<a href="/petpro/pets/<%= @pet.id %>/appointments">Show Appointments</a>
+</div>
+
 <form action="/petpro/pets/<%= @pet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

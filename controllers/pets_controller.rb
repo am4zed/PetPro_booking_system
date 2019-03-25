@@ -8,16 +8,16 @@ also_reload( '../models/*' )
 
 get '/petpro/pets' do #INDEX
   @pets = Pet.all()
-  erb (:pets_index)
+  erb (:"pets/index")
 end
 
 get '/petpro/pets/new' do #NEW
-  erb (:new_pet)
+  erb (:"pets/new")
 end
 
 get '/petpro/pets/:id' do #SHOW
   @pet = Pet.find(params['id'].to_i)
-  erb (:show_pet)
+  erb (:"pets/show")
 end
 
 get '/petpro/pets/:id/edit' do #UPDATE
@@ -26,7 +26,13 @@ get '/petpro/pets/:id/edit' do #UPDATE
   @types = ['Dog', 'Cat', 'Rodent', 'Exotic', 'Other']
   @genders = ['Male', 'Female']
   @neutered_or_spayed_options = ['Yes', 'No']
-  erb(:edit_pet)
+  erb(:"pets/edit")
+end
+
+get '/petpro/pets/:id/appointments' do
+  @pet = Pet.find(params['id'].to_i)
+  @pet_appointments = @pet.appointments
+  erb(:"pets/appointments")
 end
 
 post '/petpro/pets' do #CREATE

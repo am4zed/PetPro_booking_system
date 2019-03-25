@@ -53,12 +53,12 @@ class Pet
     SqlRunner.run(sql,values)
   end
 
-  # def appointments()
-  #   sql = 'SELECT * FROM appointments WHERE pet_id = $1'
-  #   values = [@id]
-  #   results = SqlRunner.run(sql,values)
-  #   return results.map { |appointment| Appointment.new(appointment)  }
-  # end
+  def appointments()
+    sql = 'SELECT * FROM appointments WHERE pet_id = $1'
+    values = [@id]
+    results = SqlRunner.run(sql,values)
+    return results.map { |appointment| Appointment.new(appointment)  }
+  end
 
 
 end

@@ -1,0 +1,11 @@
+<h2><%=@pet.name%>'s Booked Appointments</h2>
+
+  <%for appointment in @pet_appointments%>
+    <div class = "appointment">
+      <p>Service: <%=appointment.service%></p>
+      <p>Date: <%=appointment.appt_date%></p>
+      <p>Time: <%=appointment.appt_time%></p>
+      <p>Length(mins): <%=appointment.length_in_mins%></p>
+    </div>
+    <br>
+  <%end%>

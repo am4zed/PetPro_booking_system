@@ -7,17 +7,17 @@ also_reload( '../models/*' )
 
 get '/petpro/appointments' do #INDEX
   @appointments = Appointment.all()
-  erb (:appointments_index)
+  erb (:"appointments/index")
 end
 
 get '/petpro/appointments/new' do #NEW
   @pets = Pet.all()
-  erb (:new_appointment)
+  erb (:"appointments/new")
 end
 
 get '/petpro/appointments/:id' do #SHOW
   @appointment = Appointment.find(params['id'].to_i)
-  erb (:show_appointment)
+  erb (:"appointments/show")
 end
 
 get '/petpro/appointments/:id/edit' do #UPDATE
@@ -25,7 +25,7 @@ get '/petpro/appointments/:id/edit' do #UPDATE
   @appointment = Appointment.find(params['id'].to_i)
   @pets = Pet.all()
   @services = ['Walk', 'Groom', 'Visit']
-  erb(:edit_appointment)
+  erb(:"appointments/edit")
 end
 
 post '/petpro/appointments' do #CREATE
