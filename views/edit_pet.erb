@@ -15,11 +15,13 @@
 <div class="form-el">
   <label for="type">Pet Type: </label>
   <select name="type">
-    <option value="Dog">Dog</option>
-    <option value="Cat">Cat</option>
-    <option value="Rodent">Rodent</option>
-    <option value="Exotic">Exotic</option>
-    <option value="Other">OSther</option>
+    <%for type in @types%>
+      <%if @pet.type == type%>
+      <option value="<%=type%>" selected="selected"><%=type%></option>
+      <%else%>
+      <option value="<%=type%>"><%=type%></option>
+      <%end%>
+    <%end%>
   </select>
 </div>
 
@@ -31,8 +33,13 @@
 <div class="form-el">
   <label for="gender">Gender: </label>
   <select name="gender">
-    <option value="male">Male</option>
-    <option value="female">Female</option>
+    <%for gender in @genders%>
+      <%if @pet.gender == gender%>
+      <option value="<%=gender%>" selected="selected"><%=gender%></option>
+      <%else%>
+      <option value="<%=gender%>"><%=gender%></option>
+      <%end%>
+    <%end%>
   </select>
 </div>
 
@@ -44,8 +51,13 @@
 <div class="form-el">
   <label for="neutered_or_spayed">Neutered/spayed</label>
   <select name="neutered_or_spayed"%>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
+    <%for option in @neutered_or_spayed_options%>
+      <%if @pet.neutered_or_spayed == option%>
+      <option value="<%=option%>" selected="selected"><%=option%></option>
+      <%else%>
+      <option value="<%=option%>"><%=option%></option>
+      <%end%>
+    <%end%>
   </select>
 </div>
 

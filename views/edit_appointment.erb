@@ -4,9 +4,13 @@
 
 <div class="form-el">
   <label for="pet_id">Pet: </label>
-  <select name="pet">
+  <select name="pet_id">
       <% for pet in @pets %>
+      <%if @appointment.pet_id == pet.id%>
+      <option value="<%= pet.id%>" selected = "selected"><%= pet.name %></option>
+      <%else%>
       <option value="<%= pet.id%>"><%= pet.name %></option>
+      <% end %>
       <% end %>
   </select>
 </div>
@@ -14,29 +18,33 @@
 <div class="form-el">
   <label for="service">Service: </label>
   <select name="service">
-    <option value="walk">Walk</option>
-    <option value="groom">Groom</option>
-    <option value="visit">Visit</option>
+    <%for service in @services%>
+      <%if @appointment.service == service%>
+      <option value="<%=service%>" selected="selected"><%=service%></option>
+      <%else%>
+      <option value="<%=service%>"><%=service%></option>
+      <%end%>
+    <%end%>
   </select>
 </div>
 
 <div class="form-el">
   <label for="appt_date">Date: </label>
-  <input type="date" name="date">
+  <input type="date" name="appt_date" value = "<%= @appointment.appt_date %>">
 </div>
 
 <div class="form-el">
   <label for="appt_time">Time: </label>
-  <input type="time" name="time">
+  <input type="time" name="appt_time" value = "<%= @appointment.appt_time %>">
 </div>
 
 <div class="form-el">
   <label for="length_in_mins">Appointment length(mins):</label>
-  <input type="number" name="length_in_mins">
+  <input type="number" name="length_in_mins" value = "<%= @appointment.length_in_mins %>">
 </div>
 
 <div class="form-el">
-  <input type='submit' value="Book appointment">
+  <input type='submit' value="Save Changes">
 </div>
 
 </form>

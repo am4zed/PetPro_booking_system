@@ -4,7 +4,7 @@
 
 <div class="form-el">
   <label for="pet_id">Pet: </label>
-  <select name="pet">
+  <select name="pet_id">
       <% for pet in @pets %>
       <option value="<%= pet.id%>"><%= pet.name %></option>
       <% end %>
@@ -22,12 +22,12 @@
 
 <div class="form-el">
   <label for="appt_date">Date: </label>
-  <input type="date" name="date">
+  <input type="date" name="appt_date">
 </div>
 
 <div class="form-el">
   <label for="appt_time">Time: </label>
-  <input type="time" name="time">
+  <input type="time" name="appt_time">
 </div>
 
 <div class="form-el">

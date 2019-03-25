@@ -23,6 +23,8 @@ end
 get '/petpro/appointments/:id/edit' do #UPDATE
   @appointments = Appointment.all()
   @appointment = Appointment.find(params['id'].to_i)
+  @pets = Pet.all()
+  @services = ['Walk', 'Groom', 'Visit']
   erb(:edit_appointment)
 end
 
@@ -33,8 +35,9 @@ post '/petpro/appointments' do #CREATE
 end
 
 post '/petpro/appointments/:id' do #UPDATE
-  Appointment = Appointment.new(params)
-  Appointment.update
+  p params
+  appointment = Appointment.new(params)
+  appointment.update
   redirect to "/petpro/appointments/#{params['id']}"
 end
 

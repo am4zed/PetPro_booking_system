@@ -23,6 +23,9 @@ end
 get '/petpro/pets/:id/edit' do #UPDATE
   @pets = Pet.all()
   @pet = Pet.find(params['id'].to_i)
+  @types = ['Dog', 'Cat', 'Rodent', 'Exotic', 'Other']
+  @genders = ['Male', 'Female']
+  @neutered_or_spayed_options = ['Yes', 'No']
   erb(:edit_pet)
 end
 

@@ -49,4 +49,11 @@ class Appointment
     SqlRunner.run(sql,values)
   end
 
+  # def show_pet_name()
+  #   sql = 'SELECT pet.name FROM pets WHERE id = $1'
+  #   values = [@pet_id]
+  #   results = SqlRunner.run(sql,values)
+  #   return results.first['name']
+  # end
+
 end
