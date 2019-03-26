@@ -32,7 +32,7 @@ end
 get '/petpro/pets/:id/appointments' do
   @pet = Pet.find(params['id'].to_i)
   @pet_appointments = @pet.appointments
-  @services = ['Walk', 'Groom', 'Visit']
+  @services = ['walk', 'groom', 'visit']
   erb(:"pets/appointments")
 end
 

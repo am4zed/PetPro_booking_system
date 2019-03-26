@@ -12,6 +12,7 @@ end
 
 get '/petpro/appointments/new' do #NEW
   @pets = Pet.all()
+  @appointments = Appointment.all()
   erb (:"appointments/new")
 end
 
@@ -40,6 +41,7 @@ get '/petpro/appointments/:id/edit' do #UPDATE
   @appointment = Appointment.find(params['id'].to_i)
   @pets = Pet.all()
   @times = ['09:00', '12:00', '15:00']
+  @services = ['walk', 'groom', 'visit']
   erb(:"appointments/edit")
 end
 

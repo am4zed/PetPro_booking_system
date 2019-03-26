@@ -1,5 +1,13 @@
 <h1>Welcome to PetPro!</h1>
 
-<div class="photos">
-<!-- <img src="../public/ozzy_bax.jpg" alt="ozzy and baxter in the park"> -->
-</div>
+<%for appointment in @appointments%>
+  <% if appointment.appt_date == Date::today %>
+  <div class="appointment">
+      <p>Pet: <%= Pet.find(appointment.pet_id).name %></p>
+      <p>Service: <%= appointment.service %></p>
+      <p>Date: <%= appointment.appt_date %></p>
+      <p>Time: <%= appointment.appt_time %></p>
+      <p><a href="/petpro/appointments/<%= appointment.id %>">More Details</a><p>
+  </div>
+  <%end%>
+<%end%>

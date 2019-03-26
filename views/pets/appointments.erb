@@ -2,7 +2,7 @@
 
   <%for appointment in @pet_appointments%>
     <div class = "appointment">
-      <p>Service: <%=appointment.service%></p>
+      <p>Service: <%=appointment.service.capitalize%></p>
       <p>Date: <%=appointment.appt_date%></p>
       <p>Time: <%=appointment.appt_time%></p>
       <p>Appointment length:

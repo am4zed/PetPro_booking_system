@@ -23,7 +23,7 @@ h3 {
   text-shadow: 3px 3px 4px #FFB7C5;
 }
 
-form, p {
+p, form {
   font-family: 'PT Sans', sans-serif;
   color: #364156;
   /* text-shadow: 1px 1px black; */
@@ -34,17 +34,16 @@ a {
   font-family: 'PT Sans', sans-serif;
 }
 
+.nav-link:hover, .link:hover {
+  color: #FFB7C5;
+}
+
 nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   width: 100%;
-
-}
-
-nav ul {
-  display: inline;
 }
 
 nav li {

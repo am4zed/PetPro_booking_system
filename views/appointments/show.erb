@@ -1,6 +1,6 @@
 <div class="appointment details">
     <p>Pet: <%= Pet.find(@appointment.pet_id).name %></p>
-    <p>Service: <%= @appointment.service %></p>
+    <p>Service: <%= @appointment.service.capitalize %></p>
     <p>Date: <%= @appointment.appt_date %></p>
     <p>Time: <%= @appointment.appt_time %></p>
     <p>Appointment length:
@@ -16,3 +16,4 @@
 
 <a class= "button_navy" href="/petpro/appointments/<%= @appointment.id %>/edit">Edit</a>
 <form class="delete_form" action="/petpro/appointments/<%= @appointment.id %>/delete" method="POST"><input class="button_grey" type="submit" value="Delete"></form>
+<a class = "button_pink" href="/petpro/appointments">All Appointments</a>
