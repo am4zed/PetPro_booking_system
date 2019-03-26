@@ -13,11 +13,12 @@
 </div>
 
 <div>
-<a href="/petpro/pets/<%= @pet.id %>/edit">Edit</a>
+<a class= "button-edit" href="/petpro/pets/<%= @pet.id %>/edit">Edit</a>
 </div>
 
 <div>
-<a href="/petpro/pets/<%= @pet.id %>/appointments">Show Appointments</a>
+<a class = "button-show" href="/petpro/pets/<%= @pet.id %>/appointments">Show Appointments</a>
 </div>
 
-<form action="/petpro/pets/<%= @pet.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+
+<form class= "delete-" action="/petpro/pets/<%= @pet.id %>/delete" method="POST"><input class= "button-delete" type="submit" value="Delete"></form>

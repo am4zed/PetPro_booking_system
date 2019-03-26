@@ -4,6 +4,7 @@ html {
 
 h1 {
   color: #FFFFFF;
+  font-family: 'Lora', serif;
   font-size: 4em;
   display: flex;
   justify-content: center;
@@ -11,17 +12,103 @@ h1 {
 
 h2 {
   color: #FFFFFF;
+  font-family: 'Lora', serif;
+}
+
+h3 {
+  font-family: 'PT Sans', sans-serif;
+}
+
+p {
+  font-family: 'PT Sans', sans-serif;
 }
 
 a {
   color: #FFFFFF;
-  text-decoration: none;
+  font-family: 'PT Sans', sans-serif;
 }
 
 nav {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #FFF;
+  width: 100%;
+
+}
+
+nav ul {
+  display: inline;
+}
+
+nav li {
+  display: inline;
+  margin: 0;
+  padding: 0 25px;
+  float: left;
+}
+
+nav a {
+  height: 60px;
+  line-height: 60px;
+  color: #204156;
+  text-decoration: none;
 }
 
 form {
+  display: flex;
+  justify-content: center;
+}
 
+.form-el {
+}
+
+.button-edit {
+  background-color: #364156; /* Navy */
+  border: none;
+  border-radius: 4px;
+  color: #FFFFFF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-show {
+  background-color: #FFB7C5; /* Pink */
+  border: none;
+  border-radius: 4px;
+  color: #FFFFFF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-delete {
+  background-color: #4D5057; /* Grey */
+  border: none;
+  border-radius: 4px;
+  color: #FFFFFF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-edit:hover {
+  background-color: #6379a3; /* light navy */
+}
+.button-show:hover {
+  background-color: #ffc9d3; /* light pink */
+}
+.button-delete:hover {
+  background-color: #8e94a0; /* light grey */
+}
+
+.delete-form {
+  display: inline;
 }

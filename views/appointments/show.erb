@@ -14,5 +14,5 @@
       mins</p>
 </div>
 
-<a href="/petpro/appointments/<%= @appointment.id %>/edit">Edit</a>
-<form action="/petpro/appointments/<%= @appointment.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+<a class= "button-edit" href="/petpro/appointments/<%= @appointment.id %>/edit">Edit</a>
+<form class="delete-form" action="/petpro/appointments/<%= @appointment.id %>/delete" method="POST"><input class="button-delete" type="submit" value="Delete"></form>

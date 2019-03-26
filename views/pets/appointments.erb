@@ -6,9 +6,9 @@
       <p>Date: <%=appointment.appt_date%></p>
       <p>Time: <%=appointment.appt_time%></p>
       <p>Appointment length:
-        <% if @appointment.service.downcase == 'walk' %>
+        <% if appointment.service.downcase == 'walk' %>
         <%= 60 %>
-        <% elsif @appointment.service.downcase == 'groom' %>
+        <% elsif appointment.service.downcase == 'groom' %>
         <%= 120 %>
         <% else%>
         <%= 30 %>
