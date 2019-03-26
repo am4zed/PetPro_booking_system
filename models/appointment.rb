@@ -49,6 +49,13 @@ class Appointment
     SqlRunner.run(sql,values)
   end
 
+  def self.appointments_by_service(service)
+    sql = 'SELECT * FROM appointments WHERE service = $1'
+    values = [service]
+    results = SqlRunner.run(sql,values)
+    results.map { |appointment| Appointment.new(appointment)  }
+  end
+
   # def show_pet_name()
   #   sql = 'SELECT pet.name FROM pets WHERE id = $1'
   #   values = [@pet_id]

@@ -1,7 +1,3 @@
-<div class="pet_photo">
-  <img src="<%= @pet.photo%>" alt="<%= @pet.name %>">
-</div>
-
 <div class="pet_info">
   <h2><%=@pet.name%></h2>
     <p>Owner: <%= @pet.owner_name %></p>
@@ -13,12 +9,12 @@
 </div>
 
 <div>
-<a class= "button-edit" href="/petpro/pets/<%= @pet.id %>/edit">Edit</a>
+<a class= "button_navy" href="/petpro/pets/<%= @pet.id %>/edit">Edit</a>
 </div>
 
 <div>
-<a class = "button-show" href="/petpro/pets/<%= @pet.id %>/appointments">Show Appointments</a>
+<a class = "button_pink" href="/petpro/pets/<%= @pet.id %>/appointments">Show Appointments</a>
 </div>
 
 
-<form class= "delete-" action="/petpro/pets/<%= @pet.id %>/delete" method="POST"><input class= "button-delete" type="submit" value="Delete"></form>
+<form class= "delete_form" action="/petpro/pets/<%= @pet.id %>/delete" method="POST"><input class= "button_grey" type="submit" value="Delete"></form>

@@ -1,0 +1,11 @@
+<h2>Visits</h2>
+<%for visit in @visits%>
+  <div class="appointment">
+      <p>Pet: <%= Pet.find(visit.pet_id).name %></p>
+      <p>Service: <%= visit.service %></p>
+      <p>Date: <%= visit.appt_date %></p>
+      <p>Time: <%= visit.appt_time %></p>
+      <p><a href="/petpro/appointments/<%= visit.id %>">More Details</a><p>
+  </div>
+<%end%>
+<a class = "button_pink" href="/petpro/appointments">All Appointments</a>

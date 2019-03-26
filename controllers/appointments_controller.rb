@@ -15,6 +15,21 @@ get '/petpro/appointments/new' do #NEW
   erb (:"appointments/new")
 end
 
+get '/petpro/appointments/grooms' do
+  @grooms = Appointment.appointments_by_service('groom')
+  erb(:"appointments/grooms")
+end
+
+get '/petpro/appointments/walks' do
+  @walks = Appointment.appointments_by_service('walk')
+  erb(:"appointments/walks")
+end
+
+get '/petpro/appointments/visits' do
+  @visits = Appointment.appointments_by_service('visit')
+  erb(:"appointments/visits")
+end
+
 get '/petpro/appointments/:id' do #SHOW
   @appointment = Appointment.find(params['id'].to_i)
   erb (:"appointments/show")

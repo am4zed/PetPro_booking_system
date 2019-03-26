@@ -8,19 +8,25 @@ h1 {
   font-size: 4em;
   display: flex;
   justify-content: center;
+  text-shadow: 3px 3px 4px #FFB7C5;
 }
 
 h2 {
   color: #FFFFFF;
   font-family: 'Lora', serif;
+  text-shadow: 3px 3px 4px #FFB7C5;
 }
 
 h3 {
   font-family: 'PT Sans', sans-serif;
+  color: #FFFFFF;
+  text-shadow: 3px 3px 4px #FFB7C5;
 }
 
-p {
+form, p {
   font-family: 'PT Sans', sans-serif;
+  color: #364156;
+  /* text-shadow: 1px 1px black; */
 }
 
 a {
@@ -56,14 +62,14 @@ nav a {
 }
 
 form {
-  display: flex;
+  display: inline;
   justify-content: center;
 }
 
 .form-el {
 }
 
-.button-edit {
+.button_navy {
   background-color: #364156; /* Navy */
   border: none;
   border-radius: 4px;
@@ -75,7 +81,7 @@ form {
   font-size: 16px;
 }
 
-.button-show {
+.button_pink {
   background-color: #FFB7C5; /* Pink */
   border: none;
   border-radius: 4px;
@@ -87,7 +93,7 @@ form {
   font-size: 16px;
 }
 
-.button-delete {
+.button_grey {
   background-color: #4D5057; /* Grey */
   border: none;
   border-radius: 4px;
@@ -99,16 +105,16 @@ form {
   font-size: 16px;
 }
 
-.button-edit:hover {
+.button_navy:hover {
   background-color: #6379a3; /* light navy */
 }
-.button-show:hover {
+.button_pink:hover {
   background-color: #ffc9d3; /* light pink */
 }
-.button-delete:hover {
+.button_grey:hover {
   background-color: #8e94a0; /* light grey */
 }
 
-.delete-form {
+.delete_form {
   display: inline;
 }

@@ -22,8 +22,3 @@ CREATE TABLE appointments (
   appt_time VARCHAR(255),
   length_in_mins INT8
 );
-
--- CREATE TABLE staff (
---   id SERIAL8 PRIMARY KEY,
---   name VARCHAR(255)
--- );
