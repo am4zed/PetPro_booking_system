@@ -1,68 +1,70 @@
-<h1>Edit <%=@pet.name%></h1>
+<section>
+  <h1>Edit <%=@pet.name%></h1>
 
-<form action="/petpro/pets/<%=@pet.id %>" method="post">
+  <form action="/petpro/pets/<%=@pet.id %>" method="post">
 
-<div class="form-el">
-  <label for="name">Name: </label>
-  <input type="text" name="name" value="<%=@pet.name %>">
-</div>
+  <div class="form-el">
+    <label for="name">Name: </label>
+    <input type="text" name="name" value="<%=@pet.name %>">
+  </div>
 
-<div class="form-el">
-  <label for="owner-name">Owner Name: </label>
-  <input type="text" name="owner_name" value = "<%= @pet.owner_name %>">
-</div>
+  <div class="form-el">
+    <label for="owner-name">Owner Name: </label>
+    <input type="text" name="owner_name" value = "<%= @pet.owner_name %>">
+  </div>
 
-<div class="form-el">
-  <label for="type">Pet Type: </label>
-  <select name="type">
-    <%for type in @types%>
-      <%if @pet.type == type%>
-      <option value="<%=type%>" selected="selected"><%=type%></option>
-      <%else%>
-      <option value="<%=type%>"><%=type%></option>
+  <div class="form-el">
+    <label for="type">Pet Type: </label>
+    <select name="type">
+      <%for type in @types%>
+        <%if @pet.type == type%>
+        <option value="<%=type%>" selected="selected"><%=type%></option>
+        <%else%>
+        <option value="<%=type%>"><%=type%></option>
+        <%end%>
       <%end%>
-    <%end%>
-  </select>
-</div>
+    </select>
+  </div>
 
-<div class="form-el">
-  <label for="breed">Breed: </label>
-  <input type="text" name="breed" value=<%=@pet.breed%>>
-</div>
+  <div class="form-el">
+    <label for="breed">Breed: </label>
+    <input type="text" name="breed" value=<%=@pet.breed%>>
+  </div>
 
-<div class="form-el">
-  <label for="gender">Gender: </label>
-  <select name="gender">
-    <%for gender in @genders%>
-      <%if @pet.gender == gender%>
-      <option value="<%=gender%>" selected="selected"><%=gender%></option>
-      <%else%>
-      <option value="<%=gender%>"><%=gender%></option>
+  <div class="form-el">
+    <label for="gender">Gender: </label>
+    <select name="gender">
+      <%for gender in @genders%>
+        <%if @pet.gender == gender%>
+        <option value="<%=gender%>" selected="selected"><%=gender%></option>
+        <%else%>
+        <option value="<%=gender%>"><%=gender%></option>
+        <%end%>
       <%end%>
-    <%end%>
-  </select>
-</div>
+    </select>
+  </div>
 
-<div class="form-el">
-  <label for="age">Age: </label>
-  <input type="number" name="age" value=<%= @pet.age %>>
-</div>
+  <div class="form-el">
+    <label for="age">Age: </label>
+    <input type="number" name="age" value=<%= @pet.age %>>
+  </div>
 
-<div class="form-el">
-  <label for="neutered_or_spayed">Neutered/spayed</label>
-  <select name="neutered_or_spayed"%>
-    <%for option in @neutered_or_spayed_options%>
-      <%if @pet.neutered_or_spayed == option%>
-      <option value="<%=option%>" selected="selected"><%=option%></option>
-      <%else%>
-      <option value="<%=option%>"><%=option%></option>
+  <div class="form-el">
+    <label for="neutered_or_spayed">Neutered/spayed</label>
+    <select name="neutered_or_spayed"%>
+      <%for option in @neutered_or_spayed_options%>
+        <%if @pet.neutered_or_spayed == option%>
+        <option value="<%=option%>" selected="selected"><%=option%></option>
+        <%else%>
+        <option value="<%=option%>"><%=option%></option>
+        <%end%>
       <%end%>
-    <%end%>
-  </select>
-</div>
+    </select>
+  </div>
 
-<div class="form-el">
-  <input class="button_pink" type='submit' value="Save changes">
-</div>
+  <div class="form-el">
+    <input class="button_pink" type='submit' value="Save changes">
+  </div>
 
-</form>
+  </form>
+</section>

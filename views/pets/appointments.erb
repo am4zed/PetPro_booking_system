@@ -1,19 +1,23 @@
-<h2><%=@pet.name%>'s Booked Appointments</h2>
+<section>
 
-  <%for appointment in @pet_appointments%>
-    <div class = "appointment">
-      <p>Service: <%=appointment.service.capitalize%></p>
-      <p>Date: <%=appointment.appt_date%></p>
-      <p>Time: <%=appointment.appt_time%></p>
-      <p>Appointment length:
-        <% if appointment.service.downcase == 'walk' %>
-        <%= 60 %>
-        <% elsif appointment.service.downcase == 'groom' %>
-        <%= 120 %>
-        <% else%>
-        <%= 30 %>
-        <% end %>
-        mins</p>
-    </div>
-    <br>
-  <%end%>
+  <h2><%=@pet.name%>'s Booked Appointments</h2>
+
+    <%for appointment in @pet_appointments%>
+      <div class = "appointment">
+        <p>Service: <%=appointment.service.capitalize%></p>
+        <p>Date: <%=appointment.appt_date%></p>
+        <p>Time: <%=appointment.appt_time%></p>
+        <p>Appointment length:
+          <% if appointment.service.downcase == 'walk' %>
+          <%= 60 %>
+          <% elsif appointment.service.downcase == 'groom' %>
+          <%= 120 %>
+          <% else%>
+          <%= 30 %>
+          <% end %>
+          mins</p>
+      </div>
+      <br>
+    <%end%>
+
+</section>

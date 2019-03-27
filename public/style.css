@@ -2,6 +2,21 @@ html {
   background-color: #41C39B;
 }
 
+header {
+  width: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center ;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   color: #FFFFFF;
   font-family: 'Lora', serif;
@@ -34,9 +49,6 @@ a {
   font-family: 'PT Sans', sans-serif;
 }
 
-.nav-link:hover, .link:hover {
-  color: #FFB7C5;
-}
 
 nav {
   display: flex;
@@ -60,9 +72,8 @@ nav a {
   text-decoration: none;
 }
 
-form {
-  display: inline;
-  justify-content: center;
+.nav-link:hover, .link:hover {
+  color: #FFB7C5;
 }
 
 .form-el {
@@ -78,6 +89,7 @@ form {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin: 3px 3px 3px 3px;
 }
 
 .button_pink {
@@ -90,6 +102,7 @@ form {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin: 3px 3px 3px 3px;
 }
 
 .button_grey {
@@ -102,6 +115,7 @@ form {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin: 3px 3px 3px 3px;
 }
 
 .button_navy:hover {

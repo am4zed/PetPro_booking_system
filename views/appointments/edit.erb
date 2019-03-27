@@ -1,53 +1,55 @@
+<section>
 <h1>Edit Appointment</h1>
 
-<form action="/petpro/appointments/<%=@appointment.id%>" method="post">
+  <form action="/petpro/appointments/<%=@appointment.id%>" method="post">
 
-<div class="form-el">
-  <label for="pet_id">Pet: </label>
-  <select name="pet_id">
-      <% for pet in @pets %>
-      <%if @appointment.pet_id == pet.id%>
-      <option value="<%= pet.id%>" selected = "selected"><%= pet.name %></option>
-      <%else%>
-      <option value="<%= pet.id%>"><%= pet.name %></option>
-      <% end %>
-      <% end %>
-  </select>
-</div>
+  <div class="form-el">
+    <label for="pet_id">Pet: </label>
+    <select name="pet_id">
+        <% for pet in @pets %>
+        <%if @appointment.pet_id == pet.id%>
+        <option value="<%= pet.id%>" selected = "selected"><%= pet.name %></option>
+        <%else%>
+        <option value="<%= pet.id%>"><%= pet.name %></option>
+        <% end %>
+        <% end %>
+    </select>
+  </div>
 
-<div class="form-el">
-  <label for="service">Service: </label>
-  <select name="service">
-    <%for service in @services%>
-      <%if @appointment.service == service%>
-      <option value="<%=service%>" selected="selected"><%=service%></option>
-      <%else%>
-      <option value="<%=service%>"><%=service%></option>
+  <div class="form-el">
+    <label for="service">Service: </label>
+    <select name="service">
+      <%for service in @services%>
+        <%if @appointment.service == service%>
+        <option value="<%=service%>" selected="selected"><%=service%></option>
+        <%else%>
+        <option value="<%=service%>"><%=service%></option>
+        <%end%>
       <%end%>
-    <%end%>
-  </select>
-</div>
+    </select>
+  </div>
 
-<div class="form-el">
-  <label for="appt_date">Date: </label>
-  <input type="date" name="appt_date" value = "<%= @appointment.appt_date %>">
-</div>
+  <div class="form-el">
+    <label for="appt_date">Date: </label>
+    <input type="date" name="appt_date" value = "<%= @appointment.appt_date %>">
+  </div>
 
-<div class="form-el">
-  <label for="appt_time">Time: </label>
-  <select name="appt_time">
-    <%for time in @times%>
-      <%if @appointment.appt_time == time%>
-      <option value="<%=time%>" selected="selected"><%=time%></option>
-      <%else%>
-      <option value="<%=time%>"><%=time%></option>
+  <div class="form-el">
+    <label for="appt_time">Time: </label>
+    <select name="appt_time">
+      <%for time in @times%>
+        <%if @appointment.appt_time == time%>
+        <option value="<%=time%>" selected="selected"><%=time%></option>
+        <%else%>
+        <option value="<%=time%>"><%=time%></option>
+        <%end%>
       <%end%>
-    <%end%>
-  </select>
-</div>
+    </select>
+  </div>
 
-<div class="form-el">
-  <input class="button_pink" type='submit' value="Save Changes">
-</div>
+  <div class="form-el">
+    <input class="button_pink" type='submit' value="Save Changes">
+  </div>
 
-</form>
+  </form>
+</section>

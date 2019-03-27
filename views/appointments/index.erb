@@ -1,13 +1,17 @@
+<section>
 <h2>All Appointments</h2>
-<a class = "button_navy" href="/petpro/appointments/grooms">View all Grooms</a>
-<a class = "button_pink" href="/petpro/appointments/walks">View all Walks</a>
-<a class = "button_grey" href="/petpro/appointments/visits">View all Visits</a>
-<%for appointment in @appointments%>
-  <div class="appointment">
-      <p>Pet: <%= Pet.find(appointment.pet_id).name %></p>
-      <p>Service: <%= appointment.service.capitalize %></p>
-      <p>Date: <%= appointment.appt_date %></p>
-      <p>Time: <%= appointment.appt_time %></p>
-      <p><a class="link" href="/petpro/appointments/<%= appointment.id %>">More Details</a><p>
-  </div>
-<%end%>
+
+  <a class = "button_navy" href="/petpro/appointments/grooms">View all Grooms</a>
+  <a class = "button_pink" href="/petpro/appointments/walks">View all Walks</a>
+  <a class = "button_grey" href="/petpro/appointments/visits">View all Visits</a>
+
+  <%for appointment in @appointments%>
+    <div class="appointment">
+        <p>Pet: <%= Pet.find(appointment.pet_id).name %></p>
+        <p>Service: <%= appointment.service.capitalize %></p>
+        <p>Date: <%= appointment.appt_date %></p>
+        <p>Time: <%= appointment.appt_time %></p>
+        <p><a class="link" href="/petpro/appointments/<%= appointment.id %>">More Details</a><p>
+    </div>
+  <%end%>
+</section>

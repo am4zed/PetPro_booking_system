@@ -1,20 +1,19 @@
-<div class="pet_info">
-  <h2><%=@pet.name%></h2>
-    <p>Owner: <%= @pet.owner_name %></p>
-    <p>Type: <%= @pet.type.capitalize %></p>
-    <p>Breed: <%= @pet.breed %></p>
-    <p>Gender: <%= @pet.gender %></p>
-    <p>Age: <%= @pet.age %></p>
-    <p>Neutered/spayed: <%= @pet.neutered_or_spayed%></p>
-</div>
+<section>
 
-<div>
-<a class= "button_navy" href="/petpro/pets/<%= @pet.id %>/edit">Edit</a>
-</div>
-
-<div>
-<a class = "button_pink" href="/petpro/pets/<%= @pet.id %>/appointments">Show Appointments</a>
-</div>
+  <div class="pet_info">
+    <h2><%=@pet.name%></h2>
+      <p>Owner: <%= @pet.owner_name %></p>
+      <p>Type: <%= @pet.type.capitalize %></p>
+      <p>Breed: <%= @pet.breed %></p>
+      <p>Gender: <%= @pet.gender %></p>
+      <p>Age: <%= @pet.age %></p>
+      <p>Neutered/spayed: <%= @pet.neutered_or_spayed%></p>
+  </div>
 
 
-<form class= "delete_form" action="/petpro/pets/<%= @pet.id %>/delete" method="POST"><input class= "button_grey" type="submit" value="Delete"></form>
+  <a class= "button_navy" href="/petpro/pets/<%= @pet.id %>/edit">Edit</a>
+
+  <a class = "button_pink" href="/petpro/pets/<%= @pet.id %>/appointments">Show Appointments</a>
+
+  <form class= "delete_form" action="/petpro/pets/<%= @pet.id %>/delete" method="POST"><input class= "button_grey" type="submit" value="Delete"></form>
+</section>

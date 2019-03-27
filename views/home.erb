@@ -1,13 +1,15 @@
-<h1>Welcome to PetPro!</h1>
+<section>
 
-<%for appointment in @appointments%>
-  <% if appointment.appt_date == Date::today %>
-  <div class="appointment">
-      <p>Pet: <%= Pet.find(appointment.pet_id).name %></p>
-      <p>Service: <%= appointment.service %></p>
-      <p>Date: <%= appointment.appt_date %></p>
-      <p>Time: <%= appointment.appt_time %></p>
-      <p><a href="/petpro/appointments/<%= appointment.id %>">More Details</a><p>
-  </div>
+  <h1>Welcome to PetPro!</h1>
+
+  <%for appointment in @appointments%>
+    <% if appointment.appt_date == Date::today %>
+        <p>Pet: <%= Pet.find(appointment.pet_id).name %></p>
+        <p>Service: <%= appointment.service %></p>
+        <p>Date: <%= appointment.appt_date %></p>
+        <p>Time: <%= appointment.appt_time %></p>
+        <p><a href="/petpro/appointments/<%= appointment.id %>">More Details</a><p>
+    <%end%>
   <%end%>
-<%end%>
+  
+</section>
