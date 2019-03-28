@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Pet
   attr_reader :id, :name, :owner_name, :type,
-  :breed, :gender, :age, :neutered_or_spayed, :photo
+  :breed, :gender, :age, :neutered_or_spayed
 
   def initialize(options)
     @id = options['id'] if options['id']
@@ -13,13 +13,12 @@ class Pet
     @gender = options['gender']
     @age = options['age']
     @neutered_or_spayed = options['neutered_or_spayed']
-    @photo = options['photo']
   end
 
   def save()
-    sql = 'INSERT INTO pets (name, owner_name, type, breed, gender, age, neutered_or_spayed, photo)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *'
-    values = [@name, @owner_name, @type, @breed, @gender, @age, @neutered_or_spayed, @photo]
+    sql = 'INSERT INTO pets (name, owner_name, type, breed, gender, age, neutered_or_spayed)
+    VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *'
+    values = [@name, @owner_name, @type, @breed, @gender, @age, @neutered_or_spayed]
     results = SqlRunner.run(sql,values)
     @id = results.first['id'].to_i
   end
@@ -39,10 +38,10 @@ class Pet
   end
 
   def update()
-    sql = 'UPDATE pets SET (name, owner_name, type, breed, gender, age, neutered_or_spayed, photo) =
-    ($1, $2, $3, $4, $5, $6, $7, $8)
-    WHERE id = $9'
-    values = [@name, @owner_name, @type, @breed, @gender, @age, @neutered_or_spayed, @photo, @id]
+    sql = 'UPDATE pets SET (name, owner_name, type, breed, gender, age, neutered_or_spayed) =
+    ($1, $2, $3, $4, $5, $6, $7)
+    WHERE id = $8'
+    values = [@name, @owner_name, @type, @breed, @gender, @age, @neutered_or_spayed, @id]
     SqlRunner.run(sql,values)
   end
 

@@ -1,3 +1,4 @@
+require('pry-byebug')
 require_relative('../db/sql_runner')
 
 class Appointment
@@ -58,13 +59,14 @@ class Appointment
 
   def check_availability?
     sql = 'SELECT * FROM appointments'
-    appointments = SqlRunner.run(sql)
+    results = SqlRunner.run(sql)
+    appointments = results.map { |appointment| Appointment.new(appointment)  }
     for appointment in appointments
-      if appointment['appt_date'] == @appt_date && appointment['appt_time'] == @appt_time
+      if appointment.appt_date == @appt_date && appointment.appt_time == @appt_time
         return false
       end
-      return true
     end
+    return true
   end
 
 end
