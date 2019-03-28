@@ -56,11 +56,15 @@ class Appointment
     results.map { |appointment| Appointment.new(appointment)  }
   end
 
-  # def show_pet_name()
-  #   sql = 'SELECT pet.name FROM pets WHERE id = $1'
-  #   values = [@pet_id]
-  #   results = SqlRunner.run(sql,values)
-  #   return results.first['name']
-  # end
+  def check_availability?
+    sql = 'SELECT * FROM appointments'
+    appointments = SqlRunner.run(sql)
+    for appointment in appointments
+      if appointment['appt_date'] == @appt_date && appointment['appt_time'] == @appt_time
+        return false
+      end
+      return true
+    end
+  end
 
 end

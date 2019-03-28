@@ -46,9 +46,14 @@ get '/petpro/appointments/:id/edit' do #UPDATE
 end
 
 post '/petpro/appointments' do #CREATE
+  # check DB to see if this date and time is available
   appointment = Appointment.new(params)
-  appointment.save
-  redirect to '/petpro/appointments'
+  if appointment.check_availability? == true
+    appointment.save
+    redirect to '/petpro/appointments'
+  else
+    erb (:"appointments/unavailable")
+  end
 end
 
 post '/petpro/appointments/:id' do #UPDATE
