@@ -3,7 +3,7 @@
   <h1>Welcome to PetPro!</h1>
   <h2>Today's Appointments:</h2>
   <%for appointment in @appointments%>
-    <% if appointment.appt_date == '2019-03-27' %>
+    <% if appointment.appt_date == (Date::today).to_s %>
         <p>Pet: <%= Pet.find(appointment.pet_id).name %></p>
         <p>Service: <%= appointment.service.capitalize %></p>
         <p>Date: <%= appointment.appt_date %></p>

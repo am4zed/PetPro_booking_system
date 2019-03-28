@@ -17,6 +17,10 @@
           <% end %>
           mins</p>
       </div>
+
+      <a class= "button_navy" href="/petpro/appointments/<%= appointment.id %>/edit">Edit</a>
+      <form class="delete_form" action="/petpro/appointments/<%= appointment.id %>/delete" method="POST"><input class="button_grey" type="submit" value="Delete"></form>
+
       <br>
     <%end%>
 
