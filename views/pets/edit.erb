@@ -5,12 +5,12 @@
 
   <div class="form-el">
     <label for="name">Name: </label>
-    <input type="text" name="name" value="<%=@pet.name %>">
+    <input type="text" name="name" value="<%=@pet.name %>" required>
   </div>
 
   <div class="form-el">
     <label for="owner-name">Owner Name: </label>
-    <input type="text" name="owner_name" value = "<%= @pet.owner_name %>">
+    <input type="text" name="owner_name" value = "<%= @pet.owner_name %>" required>
   </div>
 
   <div class="form-el">
@@ -28,7 +28,7 @@
 
   <div class="form-el">
     <label for="breed">Breed: </label>
-    <input type="text" name="breed" value=<%=@pet.breed%>>
+    <input type="text" name="breed" value=<%=@pet.breed%> required>
   </div>
 
   <div class="form-el">
@@ -46,7 +46,7 @@
 
   <div class="form-el">
     <label for="age">Age: </label>
-    <input type="number" name="age" value=<%= @pet.age %> min=0>
+    <input type="number" name="age" value=<%= @pet.age %> min=0 required>
   </div>
 
   <div class="form-el">

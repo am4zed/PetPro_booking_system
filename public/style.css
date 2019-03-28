@@ -9,6 +9,12 @@ header {
 main {
   display: flex;
   justify-content: center ;
+  padding-top: 100px;
+}
+
+body  {
+  width: 100%;
+  margin: 0;
 }
 
 section {
@@ -41,7 +47,6 @@ h3 {
 p, form {
   font-family: 'PT Sans', sans-serif;
   color: #364156;
-  /* text-shadow: 1px 1px black; */
 }
 
 a {
@@ -49,6 +54,11 @@ a {
   font-family: 'PT Sans', sans-serif;
 }
 
+.form-el {
+  margin: 8px 0px;
+}
+
+/* NAV */
 
 nav {
   display: flex;
@@ -56,6 +66,10 @@ nav {
   justify-content: center;
   background-color: #FFFFFF;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.65;
+  position: fixed;
 }
 
 nav li {
@@ -76,8 +90,7 @@ nav a {
   color: #FFB7C5;
 }
 
-.form-el {
-}
+/* BUTTONS */
 
 .button_navy {
   background-color: #364156; /* Navy */
