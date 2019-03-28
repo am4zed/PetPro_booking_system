@@ -1,6 +1,6 @@
 <section>
-
   <h1>Welcome to PetPro!</h1>
+  <img class= "home_gif" src="https://media.giphy.com/media/xagTEogeO9qes/giphy.gif" alt="cartoon of dog woofing">
   <h2>Today's Appointments:</h2>
   <%for appointment in @appointments%>
     <% if appointment.appt_date == (Date::today).to_s %>

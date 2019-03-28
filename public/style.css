@@ -54,8 +54,27 @@ a {
   font-family: 'PT Sans', sans-serif;
 }
 
+img {
+  margin-bottom: 40px;
+}
+
+.pets_gif {
+  width: auto;
+  height: 18%;
+  border: solid 3px #4D5057;
+  margin-bottom: 20px;
+}
+
+.home_gif {
+  border: solid 3px #4D5057;
+}
+
 .form-el {
   margin: 8px 0px;
+}
+
+.appointment {
+  margin-top: 10px;
 }
 
 /* NAV */

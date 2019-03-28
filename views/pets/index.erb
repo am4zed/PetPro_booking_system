@@ -1,6 +1,6 @@
 <section>
   <h2>All Pets</h2>
-
+<img class="pets_gif" src="https://media.giphy.com/media/xT9IgpxorXdkhoQle8/giphy.gif" alt="">
   <%for pet in @pets%>
   <div class="pet">
       <h3><%= pet.name.capitalize %></h3>
@@ -9,5 +9,5 @@
       <p><a class= "link" href="/petpro/pets/<%= pet.id %>">More Details</a><p>
   </div>
   <%end%>
-  
+
 </section>
