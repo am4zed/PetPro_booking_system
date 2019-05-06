@@ -23,7 +23,8 @@ class Appointment
   end
 
   def self.all()
-    sql = 'SELECT * FROM appointments'
+    sql = 'SELECT * FROM appointments
+    ORDER BY appt_date'
     results = SqlRunner.run(sql)
     results.map { |appointment| Appointment.new(appointment)  }
   end
