@@ -10,3 +10,5 @@ gem "pry", "~> 0.12.2"
 
 gem "pry-byebug", "~> 3.7"
 gem "pg", "~> 1.1"
+
+gem "rake", "~> 12.3"
