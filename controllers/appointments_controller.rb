@@ -1,9 +1,9 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
-require( 'pry-byebug' )
+require( 'sinatra/contrib/all' ) if development?
+require( pry-byebug' )
 require_relative( '../models/pet.rb' )
 require_relative( '../models/appointment.rb' )
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 get '/petpro/appointments' do #INDEX
   @appointments = Appointment.all()
