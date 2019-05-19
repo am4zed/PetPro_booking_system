@@ -12,3 +12,7 @@ gem "pry-byebug", "~> 3.7"
 gem "pg", "~> 1.1"
 
 gem "rake", "~> 12.3"
+
+gem "sinatra", "~> 2.0"
+
+gem "sinatra-contrib", "~> 2.0"
