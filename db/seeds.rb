@@ -1,6 +1,5 @@
 require_relative('../models/pet')
 require_relative('../models/appointment')
-require('pry-byebug')
 
 pet1 = Pet.new({
   'name' => 'Ozzy',
